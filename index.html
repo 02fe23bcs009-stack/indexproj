@@ -1,12 +1,113 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Welcome Page</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>North Star Notes</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <header class="topbar">
+    <a class="brand" href="#home">North Star Notes</a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="nav-links">Menu</button>
+    <nav class="nav" id="nav-links">
+      <a href="#featured">Featured</a>
+      <a href="#posts">Posts</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
 
-    <h1>Welcome!</h1>
-    <p>Hello, welcome to my webpage.</p>
+  <main id="home">
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">Simple blog layout</p>
+        <h1>Fresh ideas, clean design, and a page that loads fast.</h1>
+        <p class="lede">A single-page blogging site built with plain HTML, CSS, and JavaScript for a clean project evaluation demo.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#featured">Read featured post</a>
+          <button class="button button-secondary" type="button" id="themeButton">Highlight mode</button>
+        </div>
+      </div>
+      <aside class="hero-card" aria-label="site stats">
+        <p class="stat-label">Today</p>
+        <strong id="currentDate">April 28, 2026</strong>
+        <p class="stat-label">Posts published</p>
+        <strong>04</strong>
+        <p class="stat-label">Reading time</p>
+        <strong>12 min</strong>
+      </aside>
+    </section>
 
+    <section class="featured" id="featured">
+      <article class="feature-panel">
+        <p class="section-kicker">Featured story</p>
+        <h2>How to build a blog page that feels focused, not cluttered.</h2>
+        <p>Use a strong headline, short supporting copy, and a predictable reading path. Keep the layout responsive, the colors intentional, and the content easy to scan.</p>
+        <ul class="meta-list">
+          <li>Design</li>
+          <li>HTML</li>
+          <li>Fast UI</li>
+        </ul>
+      </article>
+      <img class="feature-image" src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=80" alt="Workspace with a laptop and notes">
+    </section>
+
+    <section class="posts" id="posts">
+      <div class="section-heading">
+        <p class="section-kicker">Latest posts</p>
+        <h2>Choose a topic</h2>
+      </div>
+      <div class="filter-bar" role="tablist" aria-label="post filters">
+        <button class="filter-button active" type="button" data-filter="all">All</button>
+        <button class="filter-button" type="button" data-filter="design">Design</button>
+        <button class="filter-button" type="button" data-filter="writing">Writing</button>
+        <button class="filter-button" type="button" data-filter="build">Build</button>
+      </div>
+      <div class="post-grid" id="postGrid">
+        <article class="post-card" data-topic="design">
+          <p class="post-topic">Design</p>
+          <h3>Keeping a layout simple without making it boring</h3>
+          <p>Balance spacing, typography, and a single accent color to guide the eye.</p>
+        </article>
+        <article class="post-card" data-topic="writing">
+          <p class="post-topic">Writing</p>
+          <h3>Short paragraphs make a page feel easier to read</h3>
+          <p>Break ideas into small blocks so the page feels lighter and quicker.</p>
+        </article>
+        <article class="post-card" data-topic="build">
+          <p class="post-topic">Build</p>
+          <h3>Why plain HTML, CSS, and JS are enough for a demo</h3>
+          <p>For a project evaluation, simple code is easier to explain and maintain.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="about" id="about">
+      <div>
+        <p class="section-kicker">About this page</p>
+        <h2>Built to show basic front-end and git skills.</h2>
+      </div>
+      <p>This page is intentionally compact: one HTML file, one stylesheet, and one JavaScript file. It is easy to review, easy to run, and easy to explain in a viva or project demo.</p>
+    </section>
+
+    <section class="contact" id="contact">
+      <div>
+        <p class="section-kicker">Contact</p>
+        <h2>Stay in the loop</h2>
+      </div>
+      <form class="subscribe-form">
+        <input type="email" placeholder="Enter your email" aria-label="Email address">
+        <button class="button button-primary" type="submit">Subscribe</button>
+      </form>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>North Star Notes</p>
+    <p>&copy; <span id="year"></span> Simple blog demo.</p>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
